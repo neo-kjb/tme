@@ -14,10 +14,13 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "tme":"index.js"
+    "tme": "index.js"
   },
   "bugs": {
     "url": "https://github.com/neo-kjb/tme/issues"
   },
-  "homepage": "https://github.com/neo-kjb/tme#readme"
+  "homepage": "https://github.com/neo-kjb/tme#readme",
+  "dependencies": {
+    "chalk": "^5.1.2"
+  }
 }
