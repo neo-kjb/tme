@@ -1,5 +1,7 @@
 const path = require('path')
 const jsdom = require('jsdom')
+const { resolve } = require('path')
+const { rejects } = require('assert')
 const { JSDOM } = jsdom
 
 const render = async (filename) => {
@@ -10,7 +12,11 @@ const render = async (filename) => {
     resources: 'usable',
   })
 
-  return dom
+  return new Promise((resolve, reject) => {
+    dom.window.document.addEventListener('DOMContentLoaded', () => {
+      resolve(dom)
+    })
+  })
 }
 
 module.exports = render
